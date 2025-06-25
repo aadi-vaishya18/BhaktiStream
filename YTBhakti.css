@@ -1,0 +1,472 @@
+body {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 90px;
+    padding-right: 25px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228, 225, 225);
+    z-index: 100;
+}
+
+.start-section {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    height: 22px;
+    margin-left: 24px;
+    margin-right: 20px;
+}
+
+.logo {
+    height: 130px;
+}
+
+.middle-section {
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 40px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: inline;
+    height: 36px;
+    flex: 1;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(196, 194, 194);
+    border-radius: 2px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 0;
+}
+
+.search {
+    height: 40px;
+    width: 60px;
+    background-color: rgb(244, 239, 239);
+    border: 1px solid rgb(196, 194, 194);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    margin-left: -1px;
+    margin-right: 13px;
+}
+
+.search, .voice-search,
+.upload-container, .apps-container,
+.notification-container, .user-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .tooltip,
+.voice-search .tooltip,
+.upload-container .tooltip,
+.apps-container .tooltip,
+.notification-container .tooltip,
+.user-container .tooltip {
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding: 4px 8px 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    bottom: -30px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: Roboto, arial;
+}
+
+.search:hover .tooltip,
+.voice-search:hover .tooltip,
+.upload-container:hover .tooltip,
+.apps-container:hover .tooltip,
+.notification-container:hover .tooltip,
+.user-container:hover .tooltip {
+    opacity: 1;
+}
+
+.search-icon {
+    height: 25px;
+}
+
+.voice-search {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(237, 235, 235);
+    padding-top: 3px;
+}
+
+.voice-search-icon {
+    height: 25px;
+}
+
+.end-section {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 18px;
+    flex-shrink: 0;
+}
+
+.upload-icon,
+.acc-icon,
+.notification-icon,
+.apps-icon {
+    height: 25px;
+    cursor: pointer;
+}
+
+.notification-container {
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    background-color: rgb(207, 17, 17);
+    color: white;
+    border-radius: 50px;
+    top: -5px;
+    right: -3px;
+    font-size: 11px;
+    font-family: Roboto, Arial;
+    padding: 2px 6px 2px 6px;
+}
+
+/* Existing styles remain unchanged */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px; /* This will be overridden in mobile view */
+    width: 70px;
+    background-color: white;
+    z-index: 200;
+}
+
+/* Media query for mobile view */
+@media (max-width: 750px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: auto; /* Remove the top positioning */
+        width: 100%; /* Make it full width */
+        height: 70px; /* Set a height for the sidebar */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-around; /* Space out the items */
+    }
+
+    .sidebar-link {
+        height: auto; /* Allow height to adjust */
+        flex: 1; /* Allow links to take equal space */
+        justify-content: center; /* Center items */
+    }
+}
+
+
+.sidebar-link {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.sidebar-link img {
+    height: 25px;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div {
+    font-size: 12px;
+    font-family: Roboto, Arial;
+}
+
+/* Existing styles remain unchanged */
+
+main {
+    padding-top: 80px; /* Keep the top padding for the header */
+    padding-left: 0; /* Remove left padding to allow full width for video */
+    padding-right: 25px; /* Keep right padding */
+}
+
+/* Media query for mobile view */
+@media (max-width: 750px) {
+    main {
+        padding-left: 0; /* Ensure no left padding on mobile */
+        padding-right: 0; /* Optionally remove right padding for full width */
+    }
+}
+
+.thumbnails {
+    width: 100%;
+}
+
+.thumbnail-row {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.video-time-stamp {
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 40px;
+}
+
+@media (max-width: 999px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-preview {
+    margin-bottom: 30px;
+}
+
+.video-info-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.video-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.video-author,
+.video-stats {
+    color: rgb(96, 96, 96);
+    font-size: 12px;
+}
+
+.video-author {
+    margin-bottom: 6px;
+}
+
+.video-logo {
+    margin-top: 15px;
+    display: inline-block;
+    width: 40px;
+    vertical-align: top;
+}
+
+.pfp {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.video-info {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Media query for mobile view */
+@media (max-width: 750px) {
+    body {
+        padding: 0; /* Remove all padding from body */
+    }
+
+    header {
+        height: 55px; /* Keep header height */
+        padding: 0 10px; /* Add some horizontal padding */
+    }
+
+    .start-section {
+        padding: 0; /* Remove padding */
+    }
+
+    .middle-section {
+        margin: 0; /* Remove margins */
+        max-width: 100%; /* Allow full width */
+    }
+
+    .search-bar {
+        height: 36px; /* Keep height */
+        padding-left: 10px; /* Keep padding */
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    .search, .voice-search {
+        height: 36px; /* Adjust height for buttons */
+        width: 36px; /* Adjust width for buttons */
+        margin-left: 5px; /* Add a small margin */
+    }
+
+    .end-section {
+        margin-right: 10px; /* Reduce right margin */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for sidebar */
+        height: 70px; /* Set height for sidebar */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-around; /* Space out the items */
+    }
+
+    .sidebar-link {
+        height: auto; /* Allow height to adjust */
+        flex: 1; /* Allow links to take equal space */
+        justify-content: center; /* Center items */
+        padding: 10px 0; /* Add padding for better touch targets */
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        row-gap: 20px; /* Reduce row gap */
+    }
+
+    .video-preview {
+        margin-bottom: 20px; /* Reduce bottom margin */
+    }
+
+    .video-info-grid {
+        display: flex; /* Use flexbox for video info */
+        align-items: center; /* Center items vertically */
+        margin-top: 5px; /* Add some margin on top */
+    }
+
+    .video-title {
+        font-size: 16px; /* Slightly larger font size */
+        margin: 5px 0; /* Adjust margins */
+    }
+
+    .video-author,
+    .video-stats {
+        font-size: 12px; /* Keep font size */
+        margin: 0; /* Remove margins */
+    }
+
+    .video-logo {
+        margin-right: 10px; /* Add space between logo and text */
+    }
+}
+
+/* Media query for mobile view */
+@media (max-width: 750px) {
+    body {
+        padding: 0;
+        padding-bottom: 55px; /* Remove all padding from body */
+    }
+
+    header {
+        height: 55px; /* Keep header height */
+        padding: 0 10px; /* Add some horizontal padding */
+        display: flex; /* Ensure header is flex */
+        align-items: center; /* Center items vertically */
+        justify-content: space-between; /* Space between items */
+    }
+
+    .start-section {
+        padding: 0; /* Remove padding */
+    }
+
+    .middle-section {
+        margin: 0; /* Remove margins */
+        max-width: 100%; /* Allow full width */
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center items vertically */
+    }
+
+    .search-icon-container {
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Center items vertically */
+    }
+
+    .search {
+        height: 36px; /* Adjust height for button */
+        width: 36px; /* Adjust width for button */
+        background-color: transparent; /* Make background transparent */
+        border: none; /* Remove border */
+        padding: 0; /* Remove padding */
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    .search-icon {
+        height: 24px; /* Resize search icon */
+        width: 24px; /* Resize search icon */
+    }
+
+    .voice-search {
+        height: 36px; /* Adjust height for button */
+        width: 36px; /* Adjust width for button */
+        border-radius: 50px; /* Keep rounded */
+        border: none; /* Remove border */
+        background-color: transparent; /* Make background transparent */
+        padding: 0; /* Remove padding */
+        margin-left: 10px; /* Add margin between icons */
+    }
+
+    .voice-search-icon {
+        height: 24px; /* Resize voice search icon */
+        width: 24px; /* Resize voice search icon */
+    }
+
+    .end-section {
+        margin-right: 10px; /* Reduce right margin */
+    }
+
+    .upload-icon,
+    .acc-icon,
+    .notification-icon,
+    .apps-icon {
+        height: 24px; /* Resize all icons */
+        width: 24px; /* Resize all icons */
+    }
+}
