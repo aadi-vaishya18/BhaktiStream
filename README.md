@@ -1,4 +1,5 @@
-Here's a sample README file for your project. You can customize it further based on your specific needs and preferences.
+You can see it live at :- https://aadi-vaishya18.github.io/BhaktiStream/
+
 
 ```markdown
 # BhaktiStream
@@ -72,4 +73,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 This README provides a clear overview of your project, making it easier for others to understand and contribute.
 
-You can see it live at :- https://aadi-vaishya18.github.io/BhaktiStream/
